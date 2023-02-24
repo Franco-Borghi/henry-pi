@@ -1,10 +1,23 @@
-import './App.css';
+import './App.scss';
+import React from 'react';
+import { Outlet } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { getGenres } from './redux/actions';
+import { Nav } from './components/Nav/Nav';
 
 function App() {
+
+  const dispatch = useDispatch();
+
+  React.useEffect(() => {
+    dispatch(getGenres());
+  }, [dispatch])
+
   return (
-    <div className="App">
-      <h1>Henry Videogames</h1>
-    </div>
+    <section className="app">
+      <Nav />
+      <Outlet></Outlet>
+    </section>
   );
 }
 

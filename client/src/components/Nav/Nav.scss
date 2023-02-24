@@ -1,0 +1,67 @@
+.nav-component {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  width: calc(100vw - 80px);
+  padding: 0 40px;
+  height: 55px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  backdrop-filter: blur(10px);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  user-select: none;
+
+  ul {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    li {
+      h2 {
+        font-family: 'Press Start 2P', cursive;
+        padding-right: 80px;
+        cursor: pointer;
+      }
+
+      a {
+        text-decoration: none;
+        color: #fff;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          color: cyan;
+          transition: all 0.3s ease-in-out;
+        }
+
+        &.active {
+          color: orangered;
+        }
+      }
+    }
+  }
+
+  svg {
+    height: 22px;
+    width: 22px;
+    transition: all 1s ease-in-out;
+    cursor: pointer;
+    
+    path {
+      transition: all 0.3s ease-in-out;
+      stroke: #fff;
+    }
+
+    &:hover {
+      transition: all 1s ease-in-out;
+      transform: rotate(180deg);
+
+      path {
+        transition: all 0.3s ease-in-out;
+        stroke: orangered;
+      }
+    }
+  }
+}

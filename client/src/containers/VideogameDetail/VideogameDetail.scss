@@ -1,0 +1,59 @@
+.videogame-detail-container {
+  width: calc(100% - 80px);
+  padding: 55px 40px 0;
+  min-height: calc(100vh - 55px);
+  background-size: cover;
+  background-position: top center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .info {
+    color: white;
+    width: calc(100% - 80px);
+    margin: 40px 0;
+    max-width: 800px;
+    min-height: 50vh;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background: linear-gradient(360deg, rgb(34, 34, 34) 0%, rgb(68, 68, 68) 70%, rgb(102, 102, 102) 100%);
+
+    .image {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      object-position: top center;
+      border-radius: 20px 20px 0 0;
+    }
+
+    .details {
+      padding: 25px;
+
+      h2 {
+        color: orangered;
+        text-align: center;
+      }
+
+      .genres {
+        text-align: center;
+        color: #bfbfbf;
+      }
+
+      .description {
+        padding-top: 25px;
+      }
+
+      .rating {
+        color: gold;
+        border: 1px solid gold;
+        padding: 5px 10px;
+        border-radius: 20px;
+        width: fit-content;
+        margin-top: 25px;
+      }
+    }
+  }
+}

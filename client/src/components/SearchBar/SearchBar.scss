@@ -1,0 +1,38 @@
+.search-bar-component {
+  display: flex;
+  gap: 40px;
+  background-color: #fff;
+  width: fit-content;
+  margin: 80px auto 0;
+  border-radius: 30px;
+  overflow: hidden;
+  cursor: text;
+  
+  input {
+    border-radius: 30px;
+    border: none;
+    width: 350px;
+    padding: 0 25px;
+    height: 40px;
+    outline: none;
+
+    &:focus {
+      border: none;
+      outline: none;
+    }
+  }
+
+  button {
+    background-color: #fff;
+    background-image: url('../../media/img/mushroom-button.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+  }
+}

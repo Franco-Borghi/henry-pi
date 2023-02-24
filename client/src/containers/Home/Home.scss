@@ -1,0 +1,36 @@
+.home-container {
+  width: calc(100% - 80px);
+  padding: 55px 40px 0;
+  min-height: calc(100vh - 55px);
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    height: 25px;
+    padding: 40px 0 20px;
+
+    p {
+      color: gold;
+      width: 25px;
+      height: 25px;
+      text-align: center;
+      font-size: 16px;
+      line-height: 25px;
+      font-family: 'montserrat', sans-serif;
+      border: 1px solid gold;
+      cursor: pointer;
+    }
+  }
+
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin: 0 auto;
+    padding: 0 0 60px;
+    width: 100%;
+    max-width: 1440px;
+  }
+}
