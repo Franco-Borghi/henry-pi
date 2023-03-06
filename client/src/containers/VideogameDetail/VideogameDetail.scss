@@ -42,17 +42,32 @@
         color: #bfbfbf;
       }
 
+      .platforms {
+        padding-top: 25px;
+      }
+
       .description {
         padding-top: 25px;
       }
 
-      .rating {
-        color: gold;
-        border: 1px solid gold;
-        padding: 5px 10px;
-        border-radius: 20px;
-        width: fit-content;
+      .rating-release {
         margin-top: 25px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .rating {
+          color: gold;
+          border: 1px solid gold;
+          padding: 5px 10px;
+          border-radius: 20px;
+          width: fit-content;
+        }
+  
+        .release {
+          color: orangered;
+        }
       }
     }
   }

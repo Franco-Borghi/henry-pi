@@ -1,25 +1,207 @@
+.filter-bar {
+  position: fixed;
+  z-index: 20;
+  top: calc(55px - 120px);
+  width: calc(100vw - 80px);
+  padding: 0 40px;
+  height: 120px;
+  background-color: #333;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  // overflow: hidden;
+  transition: all 0.3s ease-in-out;
+
+  &.true {
+    // height: 140px;
+    top: 55px
+  }
+
+  .close-button {
+    position: absolute;
+    width: calc(100vw - 80px);
+    padding: 0 40px;
+    bottom: -30px;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 30px;
+    color: gold;
+    background-color: #333;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: opacity 0.66s ease-in-out;
+
+    span {
+      cursor: pointer;
+    }
+  }
+
+  ul {
+    height: calc(100% - 20px);
+    width: 100%;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+
+    .order,
+    .filter-by-genres,
+    .filter-by-origin {
+      color: #fff;
+      gap: 6px;
+      display: flex;
+      flex-direction: column;
+
+      p {
+        color: orangered;
+      }
+
+      select {
+        border-radius: 5px;
+        border: 1px solid orangered;
+        color: #fff;
+        padding: 5px;
+        background-color: transparent;
+
+        &:focus,
+        &:active {
+          border: 1px solid orangered;
+          outline: none;
+          color: #fff;
+        }
+      }
+
+      .genre-filter-tag {
+        color: #333;
+        background-color: orangered;
+        border-radius: 5px;
+        padding: 5px 8px;
+        position: relative;
+        user-select: none;
+        pointer-events: none;
+
+        &:hover {
+          background-color: #fff;
+        }
+
+        &::before {
+          content: 'X';
+          position: absolute;
+          top: -2px;
+          right: -2px;
+          font-size: 8px;
+          line-height: 8px;
+          padding: 5px;
+          cursor: pointer;
+          z-index: 1;
+          pointer-events: auto;
+        }
+      }
+
+      .label-container {
+        width: 130px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        svg {
+          cursor: pointer;
+
+          path {
+            stroke: #fff;
+          }
+
+          &.true {
+            transform: rotate(180deg);
+          }
+        }
+
+        label {
+          cursor: pointer;
+  
+          &:hover {
+            color: cyan;
+          }
+
+          span {
+            pointer-events: none;
+          }
+  
+          input {
+            pointer-events: none;
+            margin-right: 10px;
+  
+            &:checked + span {
+              color: cyan;
+            }
+    
+            &:checked {
+              accent-color: cyan;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 .home-container {
   width: calc(100% - 80px);
   padding: 55px 40px 0;
   min-height: calc(100vh - 55px);
 
-  .pagination {
+  .all-videogames-button {
     display: flex;
     justify-content: center;
-    gap: 10px;
-    height: 25px;
-    padding: 40px 0 20px;
+    align-items: center;
+    margin: 40px auto 0;
+    width: fit-content;
+    font-weight: bold;
+    border-radius: 50px;
+    padding: 10px 15px;
+    background-color: orangered;
 
-    p {
-      color: gold;
-      width: 25px;
-      height: 25px;
-      text-align: center;
-      font-size: 16px;
-      line-height: 25px;
-      font-family: 'montserrat', sans-serif;
-      border: 1px solid gold;
+    &:hover {
+      background-color: cyan;
       cursor: pointer;
+    }
+  }
+
+  .filters-and-pagination {
+    padding: 40px 40px 20px;
+    width: calc(100% - 80px);
+    display: flex;
+    justify-content: space-between;
+
+    .filters {
+      display: flex;
+      position: relative;
+
+      > p.large-text {
+        color: gold;
+        cursor: pointer;
+      }
+    }
+
+    .pagination {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      height: 25px;
+  
+      p {
+        color: gold;
+        width: 25px;
+        height: 25px;
+        text-align: center;
+        font-size: 16px;
+        line-height: 25px;
+        font-family: 'montserrat', sans-serif;
+        border: 1px solid gold;
+        cursor: pointer;
+
+        &.active {
+          background-color: #ffd70050;
+        }
+      }
     }
   }
 

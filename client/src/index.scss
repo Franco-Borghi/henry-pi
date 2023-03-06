@@ -98,6 +98,8 @@ a {
 // Skeleton loader styles
 
 .skeleton-box {
+  background-color: #222;
+  color: #222;
   display: inline-block;
   position: relative;
   overflow: hidden;
@@ -110,7 +112,7 @@ a {
     bottom: 0;
     left: 0;
     transform: translateX(-100%);
-    background: linear-gradient(89.42deg, rgba(74, 74, 74, 0) 0.5%, #7e7e7e 50.52%, rgba(74, 74, 74, 0) 99.5%);
+    background: linear-gradient(89.42deg, #222 15%, #333 50%, #222 85%);
     animation: shimmer 4s infinite;
     content: '';
   }

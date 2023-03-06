@@ -8,6 +8,7 @@ import store from './redux/store';
 import { LandingPage } from './containers/LandingPage/LandingPage';
 import { Home } from './containers/Home/Home';
 import { VideogameDetail } from './containers/VideogameDetail/VideogameDetail';
+import { Create } from './containers/Create/Create';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -18,7 +19,7 @@ ReactDOM.render(
             <Route index element={<LandingPage />}/>
             <Route path='home' element={<Home />} />
             <Route path='detail/:id' element={<VideogameDetail />} />
-            <Route path='create' element={<div>ESTOY EN CREATE</div>} />
+            <Route path='create' element={<Create />} />
           </Route>
         </Routes>
       </BrowserRouter>
