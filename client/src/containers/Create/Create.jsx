@@ -1,10 +1,12 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import './Create.scss'
 
 function Create() {
 
   const genres = useSelector(state => state.genres);
+  const navigate = useNavigate();
 
   const [name, setName] = React.useState('');
   const [description, setDescription] = React.useState('');
@@ -109,7 +111,10 @@ function Create() {
 
     fetch("http://localhost:3001/videogames", requestOptions)
       .then(response => response.text())
-      .then(result => console.log(result))
+      .then(result => {
+        alert(result);
+        navigate(`/home`)
+      })
       .catch(error => console.log('error', error));
         
   }
@@ -167,7 +172,7 @@ function Create() {
         </label>
         <label>
           Rating:
-          <input type="text" value={rating} onChange={(e) => setRating(validateRating(e.target.value))} />
+          <input type="text" placeholder='0.00' value={rating} onChange={(e) => setRating(validateRating(e.target.value))} />
         </label>
         <div className='genres'>
           <p>Genres:</p>

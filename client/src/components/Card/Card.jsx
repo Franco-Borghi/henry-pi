@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Card.scss';
+import defaultImage from '../../media/img/no-image.webp'
 
 function Card({data}) {
 
@@ -29,7 +30,7 @@ function Card({data}) {
   }
   return (
     <article onClick={() => navigate(`/detail/${data.id}`)} className='card-component'>
-      <div style={{backgroundImage: `url('${data.image || ''}')`}} className='background'></div>
+      <div style={{backgroundImage: `url('${data.image || defaultImage}')`}} className='background'></div>
       <div className='info'>
         <h3>{data.name || ''}</h3>
         <p className='normal-text'>{`Genres: ${genres && genres.length ? genres.join(', ') : 'No genres to show'}`}</p>

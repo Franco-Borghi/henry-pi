@@ -409,9 +409,9 @@ function Home() {
       <div style={{opacity: videogames ? '1' : "0"}} className='close-button normal-text'>
         <span onClick={() => {videogames && setFilterBar(!filterBar)}}>{!filterBar ? 'Open Filters' : 'Close Filters'}</span>
         <div style={{display: 'flex', gap: "10px", opacity: filterBar ? '1' : "0"}}>
-          <span onClick={() => setApplyFiltersButton(!applyFiltersButton)}>Apply Filters</span>
+          <span style={{pointerEvents: !filterBar ? 'none' : ''}} onClick={() => {setApplyFiltersButton(!applyFiltersButton); setFilterBar(!filterBar)}}>Apply Filters</span>
           <span style={{cursor: 'default'}}>|</span>
-          <span onClick={() => {clearFilters(); setApplyFiltersButton(!applyFiltersButton)}}>Clear Filters</span>
+          <span style={{pointerEvents: !filterBar ? 'none' : ''}} onClick={() => {clearFilters(); setApplyFiltersButton(!applyFiltersButton); setFilterBar(!filterBar)}}>Clear Filters</span>
         </div>
       </div>
     </nav>
@@ -419,7 +419,7 @@ function Home() {
       <SearchBar
       setSearchValue = {setSearchValue} 
       />
-      <div onClick={() => setSearchValue('')} className='lage-text all-videogames-button'>Show all videogames</div>
+      <div style={{opacity: searchValue ? '1' : '0', pointerEvents: !searchValue ? 'none' : ''}} onClick={() => setSearchValue('')} className='lage-text all-videogames-button'>Show all videogames</div>
       <div className="filters-and-pagination">
         <div className='filters'>
           <p className='large-text' onClick={() => {videogames && setFilterBar(!filterBar)}}></p>
