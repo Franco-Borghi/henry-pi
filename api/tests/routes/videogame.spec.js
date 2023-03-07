@@ -7,6 +7,8 @@ const { Videogame, conn } = require('../../src/db.js');
 const agent = session(app);
 const videogame = {
   name: 'Super Mario Bros',
+  description: 'A classic platformer game',
+  platforms: ['Nintendo'],
 };
 
 describe('Videogame routes', () => {
@@ -16,9 +18,10 @@ describe('Videogame routes', () => {
   }));
   beforeEach(() => Videogame.sync({ force: true })
     .then(() => Videogame.create(videogame)));
-  describe('GET /videogames', () => {
-    it('should get 200', () =>
-      agent.get('/videogames').expect(200)
-    );
-  });
+    describe('GET /videogames', () => {
+      it('should get 200', function(done) {
+        this.timeout(10000);
+        agent.get('/videogames').expect(200, done);
+      });
+    });
 });

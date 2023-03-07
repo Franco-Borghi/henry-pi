@@ -29,8 +29,6 @@ function Home() {
     }
   })
 
-  // const applyFilters = (games) => {
-
   //   // ORIGIN FILTER //
   //   let filteredGames = games;
   //   if (filters.origin === 'added') {
@@ -254,9 +252,9 @@ function Home() {
   }
 
   React.useEffect(() => {
-    if (!videogames) {
-      dispatch(getVideogames());
-    }
+    // if (!videogames) {
+    //   dispatch(getVideogames());
+    // }
 
     if (renderVideogames.allVideogames && renderVideogames.allVideogames.length > 15) {
       const arr = Array.from({length: Math.ceil(renderVideogames.allVideogames.length / 15)});
@@ -320,7 +318,8 @@ function Home() {
             allVideogames: videogames,
             pages: createArrayOfArrays(videogames)
           });
-          alert(`Cant find videogames named ${searchValue}`)
+          alert(`Cant find videogames named ${searchValue}`);
+          setSearchValue('');
         }
       });
 

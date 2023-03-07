@@ -10,7 +10,7 @@ videogame.get('/:id', async (req,res) => {
   if (videogame || dbVideogame) {
     res.status(200).send(videogame || dbVideogame);
   } else {
-    res.status(404).send(`La búsqueda del videojuego con id: ${id} no arrojó conincidencias`)
+    res.status(404).send(`Searching for the game with id: ${id} returned no matches`)
   }
   
 })

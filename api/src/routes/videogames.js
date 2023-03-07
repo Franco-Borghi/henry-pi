@@ -28,7 +28,7 @@ videogames.get('/', async (req,res) => {
     const filteredVideogames = await getVideogamesByName(name);
     filteredVideogames.length ?
     res.status(200).send(filteredVideogames) :
-    res.status(404).send(`La búsqueda del videojuego ${name} no arrojó conincidencias`)
+    res.status(404).send(`Search for video game ${name} returned no matches`)
   } else {
     const videogames = await getAllVideogames();
     res.status(200).send(videogames)
@@ -47,6 +47,10 @@ videogames.post('/', async (req,res) => {
     createdInDb,
     genre
   } = req.body;
+
+  if(!name || !description || !platforms.length) {
+    res.status(404).send('name, description, and platforms are obligatory')
+  }
 
   let videogameCreated = await Videogame.create({
     id,
@@ -68,7 +72,7 @@ videogames.post('/', async (req,res) => {
 
   videogameCreated.addGenre(genreDb);
 
-  res.status(200).send('Se creo un personaje nuevo');
+  res.status(200).send('A new videogame has been created');
 })
 
 module.exports = videogames;
