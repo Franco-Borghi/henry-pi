@@ -22,17 +22,28 @@ export const getGenres = () => {
 export const getVideogames = () => {
   return async function(dispatch) {
 
-    const response = await fetch('http://localhost:3001/videogames');
-
-    if (!response.ok) {
-      return console.error('Failed to fetch videogames');
+    try {
+      const response = await fetch('http://localhost:3001/videogames');
+      const videogames = await response.json();
+      dispatch({
+        type: GET_VIDEOGAMES,
+        payload: videogames
+      })
+    } catch (error) {
+      alert('Failed to fetch videogames')
     }
 
-    const videogames = await response.json();
+    // const response = await fetch('http://localhost:3001/videogames');
 
-    dispatch({
-      type: GET_VIDEOGAMES,
-      payload: videogames
-    })
+    // if (!response.ok) {
+    //   return console.error('Failed to fetch videogames');
+    // }
+
+    // const videogames = await response.json();
+
+    // dispatch({
+    //   type: GET_VIDEOGAMES,
+    //   payload: videogames
+    // })
   }
 }
